@@ -59,7 +59,6 @@
     def element_at(arr, index)
         # return the element of the Array variable `arr` at the position `index`
         # arr.at(index) # or
-        # arr[index]
         return arr[index]
     end
 
@@ -77,24 +76,21 @@
         # return `length` elements of the Array variable `arr` starting from `start_pos`
         return arr[start_pos, length]
     end
-    
+
 # 7. Array Indexing 2
 
     def neg_pos(arr, index)
         # return the element of the array at the position `index` from the end of the list
-        # Clue : arr[-index]
         return arr[-index]
     end
 
     def first_element(arr)
         # return the first element of the array
-        # arr.first
         return arr.first
     end
 
     def last_element(arr)
         # return the last element of the array
-        # arr.last
         return arr.last
     end
 

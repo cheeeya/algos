@@ -45,11 +45,11 @@
 
 # 5. Array
 
-array1 = []
-array_1 = Array.new
+    array1 = []
+    array_1 = Array.new
 
-array2 = [nil]
-array_2 = Array.new(1)
+    array2 = [nil]
+    array_2 = Array.new(1)
 
-array3 = [10,10]
-array_3 = Array.new(2,10)
+    array3 = [10,10]
+    array_3 = Array.new(2,10)

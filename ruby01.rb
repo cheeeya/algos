@@ -77,6 +77,7 @@
         # return `length` elements of the Array variable `arr` starting from `start_pos`
         return arr[start_pos, length]
     end
+    
 # 7. Array Indexing 2
 
     def neg_pos(arr, index)

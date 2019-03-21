@@ -196,3 +196,20 @@
         # keep all non negative elements ( >= 0)
         arr.keep_if { |v| v >= 0 }
     end
+
+# 12. Hash
+
+    def hash_initialization
+        empty_hash = Hash.new
+
+        default_hash = Hash.new(1)
+
+        default_hash_2 = Hash.new
+        default_hash_2.default = 1
+
+        hackerrank = {"simmy" => 100, "vivmbbs" => 200}
+
+        hackerrank_2 = Hash.new
+        hackerrank_2["simmy"] = 100
+        hackerrank_2["vivmmbs"]= 200
+    end

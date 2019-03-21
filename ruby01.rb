@@ -213,3 +213,17 @@
         hackerrank_2["simmy"] = 100
         hackerrank_2["vivmmbs"]= 200
     end
+
+# 13. Hash - Each
+
+    def iter_hash(hash)
+        hash.each do |key, value|
+            puts key
+            puts value
+        end
+
+        hash.each do |arr|
+            puts arr[0]     # key
+            puts arr[1]     # value
+        end
+    end

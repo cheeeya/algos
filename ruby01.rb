@@ -47,14 +47,16 @@
 
 # 5. Array
 
-    array1 = []
-    array_1 = Array.new
+    def array_initialization
+        array1 = []
+        array_1 = Array.new
 
-    array2 = [nil]
-    array_2 = Array.new(1)
+        array2 = [nil]
+        array_2 = Array.new(1)
 
-    array3 = [10,10]
-    array_3 = Array.new(2,10)
+        array3 = [10,10]
+        array_3 = Array.new(2,10)
+    end
 
 # 6. Array Indexing
 
@@ -114,30 +116,30 @@
         # Add an element after a given index (position)
         # Add more than one element after a given index (position)
 
-        def end_arr_add(arr, element)
-            # Add `element` to the end of the Array variable `arr` and return `arr`
-            return arr.push(element)
-        end
+    def end_arr_add(arr, element)
+         # Add `element` to the end of the Array variable `arr` and return `arr`
+        return arr.push(element)
+    end
         
-        def begin_arr_add(arr, element)
-            # Add `element` to the beginning of the Array variable `arr` and return `arr`
-            return arr.unshift(element)
-        end
+    def begin_arr_add(arr, element)
+        # Add `element` to the beginning of the Array variable `arr` and return `arr`
+        return arr.unshift(element)
+    end
         
-        def index_arr_add(arr, index, element)
-            # Add `element` at position `index` to the Array variable `arr` and return `arr`
-            return arr.insert(index, element)
-        end
+    def index_arr_add(arr, index, element)
+        # Add `element` at position `index` to the Array variable `arr` and return `arr`
+        return arr.insert(index, element)
+    end
         
-        def index_arr_multiple_add(arr, index, *args)
-            # add any two elements to the arr at the index
-            return arr.insert(index, nil, nil) unless args.length > 0
-            args.each do |element|
-                arr.insert(index, element)
-                index += 1
-            end
-            return arr
+    def index_arr_multiple_add(arr, index, *args)
+        # add any two elements to the arr at the index
+        return arr.insert(index, nil, nil) unless args.length > 0
+        args.each do |element|
+            arr.insert(index, element)
+            index += 1
         end
+        return arr
+    end
 
 # 9. Until
 
@@ -240,3 +242,21 @@
         hackerrank.keep_if { |key, value| key.is_a? Integer}
         hackerrank.delete_if { |key, value| key % 2 == 0 }
     end
+
+# 15. String Methods
+
+    #In this challenge, your task is to write the following methods:
+        # mask_article which appends strike tags around certain words in a text. The method takes 2 arguments: A string and an array of words. It then replaces all the instances of words in the text with the modified version.
+        # A helper method strike, given one string, appends strike off HTML tags around it. The strike off HTML tag is <strike></strike>.
+
+    def strike(str)
+        return "<strike>#{str}</strike>"
+    end
+
+    def mask_article(str, words_array)
+        words_array.each do |word|
+            str = str.gsub(word, strike(word))
+        end
+        return str
+    end
+    

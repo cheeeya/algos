@@ -20,10 +20,10 @@
 
 # 3. Use an infinite loop and call the method coder.practice within it and break if coder.oh_one? is true.
 
-    loop do
-        coder.practice
-        break if coder.oh_one?
-    end
+    # loop do
+    #     coder.practice
+    #     break if coder.oh_one?
+    # end
 
 # 4. You have been given a function where an object which may or may not be of the above mentioned type is sent as an argument. You have to use the case control structure in Ruby to identify the class to which the object belongs and print the following output:
 
@@ -129,10 +129,24 @@
         
         def index_arr_multiple_add(arr, index, *args)
             # add any two elements to the arr at the index
-             return arr.insert(index, nil, nil) unless args.length > 0
+            return arr.insert(index, nil, nil) unless args.length > 0
             args.each do |element|
                 arr.insert(index, element)
                 index += 1
             end
             return arr
         end
+
+# 9. Until
+
+    coder.practice until coder.oh_one?
+
+    while not coder.oh_one?
+        coder.practice
+    end
+
+    until coder.oh_one?
+        coder.practice
+    end
+
+    

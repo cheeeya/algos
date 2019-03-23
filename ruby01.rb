@@ -272,3 +272,17 @@
         end
         return colors_arr
     end
+
+# 17. Enumerables - Each with Index
+
+    # In this challenge, your task is to complete the skip_animals method that takes an animals array and a skip integer and returns an array of all elements except first skip number of items as shown in the example below.
+
+    def skip_animals(animals, skip)
+        skipped = Array.new
+        animals.each_with_index do |animal, index|
+            skipped.push("#{index}:#{animal}") if index >= skip
+        end
+        return skipped
+    end
+
+    

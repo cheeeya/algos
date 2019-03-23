@@ -285,4 +285,40 @@
         return skipped
     end
 
-    
+# 18. Enumerables - map
+    # In this challenge, your task is to write a method which takes an array of strings (containing secret enemy message bits!) and decodes its elements using ROT13 cipher system; returning an array containing the final messages.
+
+    # non-destructive
+    def rot13(secret_messages)
+        secret_messages.map do |msg|
+            decoded = ""
+            msg.each_byte do |c|
+                c +13 > 122 ? c = c + 13 - 26 : c += 13 unless c == 32
+                decoded += c.chr
+            end
+            msg = decoded
+        end
+    end
+
+    # destructive
+    def rot13(secret_messages)
+        secret_messages.map do |msg|
+            msg.chars.each_with_index do |c, index|
+                c.ord + 13 > 122 ? c = (c.ord - 13).chr : c = (c.ord + 13).chr unless c.ord == 32
+                msg[index] = c
+            end
+        end
+        return secret_messages
+    end
+
+    # destructive
+    def rot13(secret_messages)
+        secret_messages.map do |msg|
+            rot13 = "nopqrstuvwxyzabcdefghijklm "
+            alph = "abcdefghijklmnopqrstuvwxyz "
+            msg.chars.each_with_index do |c, index|
+                msg[index] = rot13[alph.index(c)]
+            end
+        end
+        return secret_messages
+    end

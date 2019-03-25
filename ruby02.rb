@@ -21,8 +21,7 @@
         return new_temp
     end
 
-#3 Blocks
-    # You are given a partially complete code. Your task is to fill in the blanks.
+#3. Blocks
 
     def factorial
         yield
@@ -34,3 +33,15 @@
         puts (1..n).reduce(:*)
     end
 
+#4. Procs
+    
+    def square_of_sum (my_array, proc_square, proc_sum)
+        sum = proc_sum.call(my_array)
+        proc_square.call(sum)
+    end
+
+    proc_square_number = proc {|n| n * n}
+    proc_sum_array = proc {|arr| arr.reduce(:+)}
+    my_array = gets.split().map(&:to_i)
+
+    puts square_of_sum(my_array, proc_square_number, proc_sum_array)

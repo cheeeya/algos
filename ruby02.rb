@@ -5,7 +5,17 @@
         (2..Math.sqrt(num)).none? {|n| num % n == 0 }
     end
 
-# 2. 
+# 2. Ruby Methods - Arguments
+    #> take([1,2,3], 1)
+    # [2, 3]
+    # > take([1,2,3], 2)
+    # [3]
+    # > take([1,2,3])
+    # [2, 3]
+
+    def take (arr, index = 1)
+        arr.drop(index)
+    end
 
 # 3. Ruby Methods - Variable Arguments
     # Write a method named full_name that generates the full names of people given their first name, followed by some variable number of middle names, followed by their last name.

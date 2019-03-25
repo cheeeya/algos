@@ -27,12 +27,13 @@
         end
     end
 
-# 4. You have been given a function where an object which may or may not be of the above mentioned type is sent as an argument. You have to use the case control structure in Ruby to identify the class to which the object belongs and print the following output:
-    # if Hacker, output "It's a Hacker!"
-    # if Submission, output "It's a Submission!"
-    # if TestCase, output "It's a TestCase!"
-    # if Contest, output "It's a Contest!"
-    # for any other object, output "It's an unknown model"
+# 4. You have been given a function where an object which may or may not be of the above mentioned type is sent as an argument.
+    # You have to use the case control structure in Ruby to identify the class to which the object belongs and print the following output:
+        # if Hacker, output "It's a Hacker!"
+        # if Submission, output "It's a Submission!"
+        # if TestCase, output "It's a TestCase!"
+        # if Contest, output "It's a Contest!"
+        # for any other object, output "It's an unknown model"
 
     def identify_class(obj)
         # write your case control structure here
@@ -322,4 +323,16 @@
 
     def sum_terms(n)
           (0..n).inject { |sum, num| sum + num**2 + 1 }
+    end
+
+    def sum_terms(n)
+          (0..n).reduce { |sum, num| sum + num**2 + 1 }
+    end
+
+# 20. Enumerable - group_by
+    # In this challenge, your task is to group the students into two categories corresponding to their marks obtained in a test.
+    # The list of students will be provided in a marks hash with student name as key and marks obtained (out of 100) as value pair, along with the pass_marks as argument.
+
+    def group_by_marks(marks, pass_marks)
+        marks.group_by {|key, value| value >= pass_marks ? "Passed" : "Failed"}
     end

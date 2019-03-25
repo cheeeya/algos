@@ -28,7 +28,6 @@
     end
 
 # 4. You have been given a function where an object which may or may not be of the above mentioned type is sent as an argument. You have to use the case control structure in Ruby to identify the class to which the object belongs and print the following output:
-
     # if Hacker, output "It's a Hacker!"
     # if Submission, output "It's a Submission!"
     # if TestCase, output "It's a TestCase!"
@@ -109,7 +108,6 @@
     end
 
 # 8. Ruby Array - Addition
-
     # In this challenge, your task is to complete three functions that take in the array arr and
         # Add an element to the end of the list
         # Add an element to the beginning of the list
@@ -231,7 +229,6 @@
     end
 
 # 14. Hash - Addition, Deletion, Selection
-
     #In this challenge, a hash object called hackerrank is already created. You have to add
         # A key-value pair [543121, 100] to the hackerrank object using store
         # Retain all key-value pairs where keys are Integers ( clue : is_a? Integer )
@@ -244,7 +241,6 @@
     end
 
 # 15. String Methods
-
     #In this challenge, your task is to write the following methods:
         # mask_article which appends strike tags around certain words in a text. The method takes 2 arguments: A string and an array of words. It then replaces all the instances of words in the text with the modified version.
         # A helper method strike, given one string, appends strike off HTML tags around it. The strike off HTML tag is <strike></strike>.
@@ -261,7 +257,6 @@
     end
     
 # 16. Enumerables
-
     # In this challenge, you have been provided with a custom object called colors that defines its own each method. You need to iterate over the items and return an Array containing the values.
 
     def iterate_colors(colors)
@@ -274,7 +269,6 @@
     end
 
 # 17. Enumerables - Each with Index
-
     # In this challenge, your task is to complete the skip_animals method that takes an animals array and a skip integer and returns an array of all elements except first skip number of items as shown in the example below.
 
     def skip_animals(animals, skip)
@@ -321,4 +315,11 @@
             end
         end
         return secret_messages
+    end
+
+# 19. Enumerable - reduce
+    # In this challenge, your task is to complete the sum method which takes an integer n and returns the sum to the n terms of the series.
+
+    def sum_terms(n)
+          (0..n).inject { |sum, num| sum + num**2 + 1 }
     end

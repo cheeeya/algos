@@ -20,3 +20,17 @@
         new_temp = new_temp * 9.0 / 5.0 + 32 if output_scale == "fahrenheit"
         return new_temp
     end
+
+#3 Blocks
+    # You are given a partially complete code. Your task is to fill in the blanks.
+
+    def factorial
+        yield
+    end
+    
+    n = gets.to_i
+
+    factorial do
+        puts (1..n).reduce(:*)
+    end
+

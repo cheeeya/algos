@@ -1,11 +1,20 @@
-# 1. Ruby Methods - Variable Arguments
+# 1. Ruby Methods - Introduction
+    # In this challenge, you need to write a method prime? that takes an argument and returns true or false depending on if the number is prime or not.
+    def prime? num
+        return false if num < 2
+        (2..Math.sqrt(num)).none? {|n| num % n == 0 }
+    end
+
+# 2. 
+
+# 3. Ruby Methods - Variable Arguments
     # Write a method named full_name that generates the full names of people given their first name, followed by some variable number of middle names, followed by their last name.
 
     def full_name(*args)
         args.join(" ")
     end
 
-#2. Ruby  Methods - Keyword Arguments
+# 4. Ruby Methods - Keyword Arguments
     # In this challenge, your task is to write a method convert_temp that helps in temperature conversion.
     # The method will receive a number as an input (temperature), a named parameter input_scale (scale for input temperature),
     # and an optional parameter output_scale (output temperature scale, defaults to Celsius) and return the converted temperature.
@@ -21,7 +30,7 @@
         return new_temp
     end
 
-#3. Blocks
+# 5. Blocks
 
     def factorial
         yield
@@ -33,7 +42,7 @@
         puts (1..n).reduce(:*)
     end
 
-#4. Procs
+# 6. Procs
     
     def square_of_sum (my_array, proc_square, proc_sum)
         sum = proc_sum.call(my_array)

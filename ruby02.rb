@@ -11,7 +11,7 @@
     # and an optional parameter output_scale (output temperature scale, defaults to Celsius) and return the converted temperature.
     # It should perform interconversion between Celsius, Fahrenheit and Kelvin scale.
 
-    def convert_temp(temperature, input_scale: "fahrenheit", output_scale: "celsius")
+    def convert_temp(temperature, input_scale: "celsius", output_scale: "celsius")
         return temperature if input_scale == output_scale
         new_temp = temperature    
         new_temp = (temperature - 32) * 5.0 / 9.0 if input_scale == "fahrenheit"

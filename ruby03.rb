@@ -42,3 +42,7 @@
     # Challenge: Write the method count_multibyte_char which takes a string as input and returns the number of multibyte characters (byte size > 1) in it.
 
     def count_multibyte_char string
+        count = 0
+        string.each_char { |c| count += 1 if c.bytesize > 1}
+        count
+    end

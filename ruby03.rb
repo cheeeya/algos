@@ -23,7 +23,7 @@
     # In this challenge, we practice setting the encoding information for some string of text using Ruby's Encoding methods.
     # Write a function named transcode which takes a ISO-8859-1 encoded string as a parameter, converts it to an UTF-8 encoded string, and returns the result.
 
-    def transcode (string)
+    def transcode string
         string.force_encoding(Encoding::UTF_8)
     end
 
@@ -33,7 +33,12 @@
         # It returns a string containing the answer in format SSS-ZZ.ZZ where SSS is the serial number of that input string, and ZZ.ZZ is the average of XX.XX and YY.YY.
         # All numbers are rounded off to two decimal places.
 
-    def serial_average(serial_num)
+    def serial_average serial_num
         average = (serial_num[4,5].to_f + serial_num[10,5].to_f) / 2.0
         "#{serial_num[0,3]}-#{average.round(2)}"
     end
+
+# 4. Iteration
+    # Challenge: Write the method count_multibyte_char which takes a string as input and returns the number of multibyte characters (byte size > 1) in it.
+
+    def count_multibyte_char string

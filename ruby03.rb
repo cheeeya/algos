@@ -46,3 +46,14 @@
         string.each_char { |c| count += 1 if c.bytesize > 1}
         count
     end
+
+# 5. Methods 1
+    # In this challenge, your task is to code a process_text method,
+    # which takes an array of strings as input and returns a single joined string with all flanking whitespace and new lines removed.
+    # Each string has to be separated by a single space.
+
+    def process_text string_array
+        final = Array.new
+        string_array.each { |s| final.push(s.strip)}
+        final.join(" ")
+    end

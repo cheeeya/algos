@@ -2,7 +2,7 @@
 
 # 1. Your task is to iterate through each of the elements in the array using each and call the method update_score on every element.
 
-    def scoring(array)
+    def scoring array
         # iterate through each of the element in array using *each* and call update_score on it
         array.each do |user|
             user.update_score
@@ -11,7 +11,7 @@
 
 # 2. User has two public methods, is_admin? and update_score. Your task in this challenge is to use the control structure unless and update all elements of the array who are not admins.
 
-    def scoring(array)
+    def scoring array
         # update_score of every user in the array unless the user is admin
         array.each do |user|
             user.update_score unless user.is_admin?
@@ -35,7 +35,7 @@
         # if Contest, output "It's a Contest!"
         # for any other object, output "It's an unknown model"
 
-    def identify_class(obj)
+    def identify_class obj
         # write your case control structure here
         case obj
         when Hacker, Submission, TestCase, Contest
@@ -88,12 +88,12 @@
         return arr[-index]
     end
 
-    def first_element(arr)
+    def first_element arr
         # return the first element of the array
         return arr.first
     end
 
-    def last_element(arr)
+    def last_element arr
         # return the last element of the array
         return arr.last
     end
@@ -156,12 +156,12 @@
 
 # 10. Array Deletion
 
-    def end_arr_delete(arr)
+    def end_arr_delete arr
         # delete the element from the end of the array and return the deleted element
         return arr.pop
     end
 
-    def start_arr_delete(arr)
+    def start_arr_delete arr
         # delete the element at the beginning of the array and return the deleted element
         return arr.shift
     end
@@ -178,22 +178,22 @@
 
 # 11. Array Selection
 
-    def select_arr(arr)
+    def select_arr arr
         # select and return all odd numbers from the Array variable `arr`
         arr.select { |v| v % 2 != 0 }
     end
     
-    def reject_arr(arr)
+    def reject_arr arr
         # reject all elements which are divisible by 3
         arr.reject { |v| v % 3 == 0 }
     end
     
-    def delete_arr(arr)
+    def delete_arr arr
         # delete all negative elements
         arr.delete_if { |v| v < 0 }
     end
     
-    def keep_arr(arr)
+    def keep_arr arr
         # keep all non negative elements ( >= 0)
         arr.keep_if { |v| v >= 0 }
     end
@@ -217,7 +217,7 @@
 
 # 13. Hash - Each
 
-    def iter_hash(hash)
+    def iter_hash hash
         hash.each do |key, value|
             puts key
             puts value
@@ -246,8 +246,8 @@
         # mask_article which appends strike tags around certain words in a text. The method takes 2 arguments: A string and an array of words. It then replaces all the instances of words in the text with the modified version.
         # A helper method strike, given one string, appends strike off HTML tags around it. The strike off HTML tag is <strike></strike>.
 
-    def strike(str)
-        return "<strike>#{str}</strike>"
+    def strike string
+        return "<strike>#{string}</strike>"
     end
 
     def mask_article(str, words_array)
@@ -260,7 +260,7 @@
 # 16. Enumerables
     # In this challenge, you have been provided with a custom object called colors that defines its own each method. You need to iterate over the items and return an Array containing the values.
 
-    def iterate_colors(colors)
+    def iterate_colors colors
         # Your code here
         colors_arr = Array.new
         colors.each do |color|
@@ -284,7 +284,7 @@
     # In this challenge, your task is to write a method which takes an array of strings (containing secret enemy message bits!) and decodes its elements using ROT13 cipher system; returning an array containing the final messages.
 
     # non-destructive
-    def rot13(secret_messages)
+    def rot13 secret_messages
         secret_messages.map do |msg|
             decoded = ""
             msg.each_byte do |c|
@@ -296,7 +296,7 @@
     end
 
     # destructive
-    def rot13(secret_messages)
+    def rot13 secret_messages
         secret_messages.map do |msg|
             msg.chars.each_with_index do |c, index|
                 c.ord + 13 > 122 ? c = (c.ord - 13).chr : c = (c.ord + 13).chr unless c.ord == 32
@@ -307,7 +307,7 @@
     end
 
     # destructive
-    def rot13(secret_messages)
+    def rot13 secret_messages
         secret_messages.map do |msg|
             rot13 = "nopqrstuvwxyzabcdefghijklm "
             alph = "abcdefghijklmnopqrstuvwxyz "
@@ -321,11 +321,11 @@
 # 19. Enumerable - reduce
     # In this challenge, your task is to complete the sum method which takes an integer n and returns the sum to the n terms of the series.
 
-    def sum_terms(n)
+    def sum_terms n
           (0..n).inject { |sum, num| sum + num**2 + 1 }
     end
 
-    def sum_terms(n)
+    def sum_terms n
           (0..n).reduce { |sum, num| sum + num**2 + 1 }
     end
 
@@ -333,6 +333,6 @@
     # In this challenge, your task is to group the students into two categories corresponding to their marks obtained in a test.
     # The list of students will be provided in a marks hash with student name as key and marks obtained (out of 100) as value pair, along with the pass_marks as argument.
 
-    def group_by_marks(marks, pass_marks)
+    def group_by_marks (marks, pass_marks)
         marks.group_by {|key, value| value >= pass_marks ? "Passed" : "Failed"}
     end

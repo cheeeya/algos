@@ -241,23 +241,7 @@
         hackerrank.delete_if { |key, value| key % 2 == 0 }
     end
 
-# 15. String Methods
-    #In this challenge, your task is to write the following methods:
-        # mask_article which appends strike tags around certain words in a text. The method takes 2 arguments: A string and an array of words. It then replaces all the instances of words in the text with the modified version.
-        # A helper method strike, given one string, appends strike off HTML tags around it. The strike off HTML tag is <strike></strike>.
-
-    def strike string
-        return "<strike>#{string}</strike>"
-    end
-
-    def mask_article(str, words_array)
-        words_array.each do |word|
-            str = str.gsub(word, strike(word))
-        end
-        return str
-    end
-    
-# 16. Enumerables
+# 15. Enumerables
     # In this challenge, you have been provided with a custom object called colors that defines its own each method. You need to iterate over the items and return an Array containing the values.
 
     def iterate_colors colors
@@ -269,7 +253,7 @@
         return colors_arr
     end
 
-# 17. Enumerables - Each with Index
+# 16. Enumerables - Each with Index
     # In this challenge, your task is to complete the skip_animals method that takes an animals array and a skip integer and returns an array of all elements except first skip number of items as shown in the example below.
 
     def skip_animals(animals, skip)
@@ -280,7 +264,7 @@
         return skipped
     end
 
-# 18. Enumerables - map
+# 17. Enumerables - map
     # In this challenge, your task is to write a method which takes an array of strings (containing secret enemy message bits!) and decodes its elements using ROT13 cipher system; returning an array containing the final messages.
 
     # non-destructive
@@ -318,7 +302,7 @@
         return secret_messages
     end
 
-# 19. Enumerable - reduce
+# 18. Enumerable - reduce
     # In this challenge, your task is to complete the sum method which takes an integer n and returns the sum to the n terms of the series.
 
     def sum_terms n
@@ -329,7 +313,7 @@
           (0..n).reduce { |sum, num| sum + num**2 + 1 }
     end
 
-# 20. Enumerable - group_by
+# 19. Enumerable - group_by
     # In this challenge, your task is to group the students into two categories corresponding to their marks obtained in a test.
     # The list of students will be provided in a marks hash with student name as key and marks obtained (out of 100) as value pair, along with the pass_marks as argument.
 

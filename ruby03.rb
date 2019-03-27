@@ -57,3 +57,20 @@
         string_array.each { |s| final.push(s.strip)}
         final.join(" ")
     end
+
+# 6. Methods 2
+    #In this challenge, your task is to write the following methods:
+        # mask_article which appends strike tags around certain words in a text. The method takes 2 arguments: A string and an array of words. It then replaces all the instances of words in the text with the modified version.
+        # A helper method strike, given one string, appends strike off HTML tags around it. The strike off HTML tag is <strike></strike>.
+
+    def strike string
+        return "<strike>#{string}</strike>"
+    end
+
+    def mask_article(str, words_array)
+        words_array.each do |word|
+            str = str.gsub(word, strike(word))
+        end
+        return str
+    end
+        

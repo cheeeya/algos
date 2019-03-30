@@ -118,9 +118,31 @@
         
     def lambda_message_printer(my_lambda)
         message = "Welcome to Lambda Message Printer"
-        my_lambda.call()              #Call my_lambda
+        my_lambda.call              #Call my_lambda
         puts "But in this function/method message is :: #{message}"
     end
 
     my_lambda = -> { puts "This message remembers message :: #{message}" }
-    lambda_message_printer(my_lambda) 
+    lambda_message_printer(my_lambda)
+
+# 9. Partial Applications
+    # Here, combination is a variable that stores a partial application which computes combination nCr.
+
+    combination = ->(n) do
+        ->(r) do
+            return 0 if r > n
+            factorial(n) / (factorial(r) * factorial(n - r))
+        end
+    end
+
+    def factorial i
+        (1..i).reduce { |t, f| t * f }
+    end
+
+
+    n = gets.to_i
+    r = gets.to_i
+    nCr = combination.(n)
+    puts nCr.(r)
+
+

@@ -41,6 +41,7 @@
     end
 
 # 5. Blocks
+    # Blocks are nameless methods that can be passed to another method as a parameter. 
 
     def factorial
         yield
@@ -53,6 +54,7 @@
     end
 
 # 6. Procs
+    # Proc objects are blocks of code that can be bound to a set of local variables. You can think of a proc object as a "saved" block.
     
     def square_of_sum (my_array, proc_square, proc_sum)
         sum = proc_sum.call(my_array)
@@ -66,6 +68,7 @@
     puts square_of_sum(my_array, proc_square_number, proc_sum_array)
 
 # 7. Lambdas
+    # Lambdas are anonymous functions. Lambdas in Ruby are objects of the class Proc. 
 
     # Write a lambda which takes an integer and square it
     square      = ->(a) { a * a }
@@ -93,6 +96,9 @@
     p a; p b; p c; p d; p e
 
 # 8. Closures
+    # Closure is a function/method that:
+        # Can be passed around like an object.
+        # Remembers the value of variables no longer in scope.
 
     def block_message_printer
         message = "Welcome to Block Message Printer"
@@ -126,6 +132,7 @@
     lambda_message_printer(my_lambda)
 
 # 9. Partial Applications
+    # In Partial Application, we create a lambda that takes a parameter and returns a lambda that does something with it.
     # Here, combination is a variable that stores a partial application which computes combination nCr.
 
     combination = ->(n) do
@@ -144,5 +151,21 @@
     r = gets.to_i
     nCr = combination.(n)
     puts nCr.(r)
+
+# 10. Currying
+    # Currying is a technique in which a function accepts n parameters and turns it into a sequence of n functions, each of them take 1 parameter.
+
+    power_function = -> (x, z) {
+        (x) ** z
+    }
+
+    base = gets.to_i
+    raise_to_power = power_function.curry.(base)
+
+    power = gets.to_i
+    puts raise_to_power.(power)
+
+    
+
 
 

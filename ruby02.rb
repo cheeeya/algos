@@ -173,13 +173,10 @@
     end
     
     def prime_palindrome? num
-        return false if num < 2
-        (2..Math.sqrt(num)).none? {|n| num % n == 0 } ? num == num.to_s.reverse.to_i : false
+        return false if num < 2 || num != num.to_s.reverse.to_i
+        (2..Math.sqrt(num)).none? {|n| num % n == 0 }
     end
-    
     
     n = gets.to_i
     
     p palindromic_primes.(n)
-
-

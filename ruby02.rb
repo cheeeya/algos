@@ -143,7 +143,7 @@
     end
 
     def factorial i
-        (1..i).reduce { |t, f| t * f }
+        (1..i).reduce(:*)
     end
 
 
@@ -165,7 +165,21 @@
     power = gets.to_i
     puts raise_to_power.(power)
 
-    
+# 11. Lazy Evaluation
+    # Lazy evaluation is an evaluation strategy that delays the assessment of an expression until its value is needed.
 
+    palindromic_primes = -> (array_size) do
+        2.upto(Float::INFINITY).lazy.select { |i| prime_palindrome?(i) }.first(array_size)
+    end
+    
+    def prime_palindrome? num
+        return false if num < 2
+        (2..Math.sqrt(num)).none? {|n| num % n == 0 } ? num == num.to_s.reverse.to_i : false
+    end
+    
+    
+    n = gets.to_i
+    
+    p palindromic_primes.(n)
 
 

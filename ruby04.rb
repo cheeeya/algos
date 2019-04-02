@@ -1,3 +1,5 @@
+# Warmup
+
 # 1.
 
     def solveMeFirst (a, b)
@@ -48,4 +50,34 @@
             diagonal_difference  = diagonal_difference + val[index] - val[val.size - index - 1]
         end
         diagonal_difference.abs
+    end
+
+# 6. Plus Minus
+    # Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
+
+    # iterates across array 1x
+    def plusMinus(arr)
+        positive_count = 0
+        negative_count = 0
+        zero_count = 0
+        arr.each do |val|
+            case val <=> 0
+            when 1
+                positive_count += 1
+            when -1
+                negative_count += 1
+            else
+                zero_count += 1
+            end
+        end
+        p positive_count / arr.size.to_f
+        p negative_count / arr.size.to_f
+        p zero_count / arr.size.to_f
+    end
+
+    # solved in 3 lines, iterates across array 3x
+    def plusMinus(arr)
+        p arr.select { |el| el > 0 }.size / arr.size.to_f
+        p arr.select { |el| el < 0 }.size / arr.size.to_f
+        p arr.select { |el| el == 0 }.size / arr.size.to_f
     end

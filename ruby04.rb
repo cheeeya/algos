@@ -13,7 +13,7 @@
     end
 
 # 3. Compare the Triplets
-    # Complete the function compareTriplets. It must return an array of two integers, the first being Alice's score and the second being Bob's.
+    # The function compareTriplets must return an array of two integers, the first being Alice's score and the second being Bob's.
     # compareTriplets has the following parameter(s):
         # a: an array of integers representing Alice's challenge rating
         # b: an array of integers representing Bob's challenge rating   
@@ -53,7 +53,8 @@
     end
 
 # 6. Plus Minus
-    # Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
+    # Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros.
+    # Print the decimal value of each fraction on a new line.
 
     # iterates across array 1x
     def plusMinus(arr)
@@ -80,4 +81,17 @@
         p arr.select { |el| el > 0 }.size / arr.size.to_f
         p arr.select { |el| el < 0 }.size / arr.size.to_f
         p arr.select { |el| el == 0 }.size / arr.size.to_f
+    end
+
+# 7. Staircase
+    # Consider a staircase of size n.
+    # The base and height are both equal to n, and the image is drawn using # symbols and spaces.
+    # The last line is not preceded by any spaces.
+
+    def staircase n 
+        (1..n).each do |line|
+            (1..n - line).each { |spaces| print " " }
+            (1..line).each { |hashtags| print "#" }
+            puts
+        end
     end

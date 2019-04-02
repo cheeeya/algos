@@ -2,14 +2,14 @@
 
 # 1.
 
-    def solveMeFirst (a, b)
+    def solveMeFirst(a, b)
         a + b
     end
 
 # 2. Simple Array Sum
   
-    def simpleArraySum(ar)
-        ar.reduce(:+)
+    def simpleArraySum arr
+        arr.reduce(:+)
     end
 
 # 3. Compare the Triplets
@@ -35,8 +35,8 @@
     # Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
         # **BigNum and FixNum are unified in ruby as Integer, use Long for java
 
-    def aVeryBigSum(ar)
-        ar.reduce(:+)
+    def aVeryBigSum arr
+        arr.reduce(:+)
     end
 
 # 5. Diagonal Difference
@@ -44,7 +44,7 @@
     # diagonalDifference takes the following parameter:
         # arr: an array of integers .
 
-    def diagonalDifference(arr)
+    def diagonalDifference arr
         diagonal_difference = 0
         arr.each_with_index do |val, index|
             diagonal_difference  = diagonal_difference + val[index] - val[val.size - index - 1]
@@ -57,7 +57,7 @@
     # Print the decimal value of each fraction on a new line.
 
     # iterates across array 1x
-    def plusMinus(arr)
+    def plusMinus arr
         positive_count = 0
         negative_count = 0
         zero_count = 0
@@ -77,7 +77,7 @@
     end
 
     # solved in 3 lines, iterates across array 3x
-    def plusMinus(arr)
+    def plusMinus arr
         p arr.select { |el| el > 0 }.size / arr.size.to_f
         p arr.select { |el| el < 0 }.size / arr.size.to_f
         p arr.select { |el| el == 0 }.size / arr.size.to_f
@@ -94,4 +94,38 @@
             (1..line).each { |hashtags| print "#" }
             puts
         end
+    end
+
+# 8. Mini-Max Sum
+    # Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+    # Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+    def miniMaxSum arr
+        min_nums = Array.new
+        max_nums = Array.new
+        hash = { "min": nil, "max": nil, "min_index": 0, "max_index": 0 }
+        arr.each do |el|
+            if min_nums.size < 4
+                min_nums.push(el)
+                if hash["max"].nil? || el > hash["max"]
+                    hash["max"] = el
+                    hash["max_index"] = min_nums.size - 1
+                end
+            elsif el < hash["max"]
+                hash["max"] = el
+                min_nums[hash["max_index"]] = el 
+            end
+            if max_nums.size < 4
+                max_nums.push(el)
+                if hash["min"].nil? || el < hash["min"]
+                    hash["min"] = el
+                    hash["min_index"] = max_nums.size - 1
+                end
+            elsif el > hash["min"]
+                hash["min"] = el
+                max_nums[hash["min_index"]] = el
+            end
+        end
+        print "#{min_nums.reduce(:+)} "
+        print max_nums.reduce(:+)
     end

@@ -38,8 +38,14 @@
     end
 
 # 5. Diagonal Difference
+    # Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+    # diagonalDifference takes the following parameter:
+        # arr: an array of integers .
 
     def diagonalDifference(arr)
-    p arr
-
-end
+        diagonal_difference = 0
+        arr.each_with_index do |val, index|
+            diagonal_difference  = diagonal_difference + val[index] - val[val.size - index - 1]
+        end
+        diagonal_difference.abs
+    end

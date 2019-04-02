@@ -46,3 +46,25 @@
         end
         scores
     end
+
+# 4. A Very Big Sum
+    # Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+        # **BigNum and FixNum are unified in ruby as Integer, use Long for java
+
+    def aVeryBigSum(ar)
+        ar.reduce(:+)
+    end
+    
+    fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+    
+    ar_count = gets.to_i
+    
+    ar = gets.rstrip.split(' ').map(&:to_i)
+    
+    result = aVeryBigSum ar
+    
+    fptr.write result
+    fptr.write "\n"
+    
+    fptr.close()
+    

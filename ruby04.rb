@@ -137,3 +137,12 @@
         max_nums[max_nums.index(minMax[0])] = arr[4] if arr[4] > minMax[0]
         print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
     end
+
+    def miniMaxSum arr
+        min_nums = arr.take(5)
+        max_nums = arr.take(5)
+        minMax = arr.minmax
+        min_nums[arr.index(minMax[1])] = 0
+        max_nums[arr.index(minMax[0])] = 0
+        print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
+    end

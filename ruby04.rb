@@ -146,3 +146,8 @@
         max_nums[arr.index(minMax[0])] = 0
         print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
     end
+
+    def miniMaxSum arr
+        sorted = arr.sort
+        print "#{sorted.take(4).sum} #{sorted.slice(1,4).sum}"
+    end

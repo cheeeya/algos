@@ -103,27 +103,27 @@
     def miniMaxSum arr
         min_nums = Array.new
         max_nums = Array.new
-        hash = { "min": nil, "max": nil, "min_index": 0, "max_index": 0 }
+        min, max, min_index, max_index = nil
         arr.each do |el|
             if min_nums.size < 4
                 min_nums.push(el)
-                if hash["max"].nil? || el > hash["max"]
-                    hash["max"] = el
-                    hash["max_index"] = min_nums.size - 1
+                if max.nil? || el > max
+                    max = el
+                    max_index = min_nums.size - 1
                 end
-            elsif el < hash["max"]
-                hash["max"] = el
-                min_nums[hash["max_index"]] = el 
+            elsif el < max
+                max = el
+                min_nums[max_index] = el 
             end
             if max_nums.size < 4
                 max_nums.push(el)
-                if hash["min"].nil? || el < hash["min"]
-                    hash["min"] = el
-                    hash["min_index"] = max_nums.size - 1
+                if min.nil? || el < min
+                    min = el
+                    min_index = max_nums.size - 1
                 end
-            elsif el > hash["min"]
-                hash["min"] = el
-                max_nums[hash["min_index"]] = el
+            elsif el > min
+                min = el
+                max_nums[min_index] = el
             end
         end
         print "#{min_nums.reduce(:+)} "

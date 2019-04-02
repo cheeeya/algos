@@ -27,3 +27,22 @@
     fptr.write "\n"
 
     fptr.close()
+
+# 3. Compare the Triplets
+    # Complete the function compareTriplets. It must return an array of two integers, the first being Alice's score and the second being Bob's.
+    # compareTriplets has the following parameter(s):
+        # a: an array of integers representing Alice's challenge rating
+        # b: an array of integers representing Bob's challenge rating   
+    
+    def compareTriplets(a,b)
+        scores = [0,0]
+        a.each_with_index do |val, index|
+            case val <=> b[index]
+            when 1
+                scores[0] += 1
+            when -1
+                scores[1] += 1
+            end
+        end
+        scores
+    end

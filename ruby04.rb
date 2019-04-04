@@ -180,6 +180,7 @@
     def timeConversion s
         converted_time = "#{(s[0,2].to_i + 12) % 12}#{s[2,6]}".rjust(8, "0")
         converted_time = "#{converted_time[0,2].to_i + 12}#{s[2,6]}" if s[8,9] == "PM"
+        converted_time
     end
 
     def timeConversion s

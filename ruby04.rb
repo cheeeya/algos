@@ -151,3 +151,27 @@
         sorted = arr.sort
         print "#{sorted.take(4).sum} #{sorted.slice(1,4).sum}"
     end
+
+# 9. Birthday Cake Candles
+    # You are in charge of the cake for your niece's birthday and have decided the cake will have one candle for each year of her total age.
+    # When she blows out the candles, she’ll only be able to blow out the tallest ones. Your task is to find out how many candles she can successfully blow out.
+
+    def birthdayCakeCandles arr
+        arr.count(arr.max)
+    end
+
+    def birthdayCakeCandles arr
+        max = nil
+        count = 0
+        arr.each do |val|
+            if max.nil? || val > max
+                max = val
+                count = 1
+            elsif val == max
+                count += 1
+            end
+        end
+        count 
+    end
+
+# 10. Time Conversion

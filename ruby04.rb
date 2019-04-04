@@ -87,6 +87,7 @@
     # Consider a staircase of size n.
     # The base and height are both equal to n, and the image is drawn using # symbols and spaces.
     # The last line is not preceded by any spaces.
+        # input format: n, an integer denoting size of staircase
 
     def staircase n 
         (1..n).each do |line|
@@ -99,6 +100,7 @@
 # 8. Mini-Max Sum
     # Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
     # Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+        # input format: [a, b, c, d, e], an array of 5 integers
 
     def miniMaxSum arr
         min_nums = Array.new
@@ -155,6 +157,7 @@
 # 9. Birthday Cake Candles
     # You are in charge of the cake for your niece's birthday and have decided the cake will have one candle for each year of her total age.
     # When she blows out the candles, she’ll only be able to blow out the tallest ones. Your task is to find out how many candles she can successfully blow out.
+        # input format: [a, b, c, a, c], an array of integers
 
     def birthdayCakeCandles arr
         arr.count(arr.max)
@@ -176,6 +179,7 @@
 
 # 10. Time Conversion
     # Given a time in 12-hour AM/PM format, convert it to military (24-hour) time
+        # format: hh:mm:ssAM to hh:mm:ss
 
     def timeConversion s
         converted_time = "#{(s[0,2].to_i + 12) % 12}#{s[2,6]}".rjust(8, "0")

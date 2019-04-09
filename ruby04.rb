@@ -2,13 +2,13 @@
 
 # 1.
 
-    def solveMeFirst(a, b)
+    def solve_me_first(a, b)
         a + b
     end
 
 # 2. Simple Array Sum
   
-    def simpleArraySum arr
+    def simple_array_sum arr
         arr.reduce(:+)
     end
 
@@ -18,7 +18,7 @@
         # a: an array of integers representing Alice's challenge rating
         # b: an array of integers representing Bob's challenge rating   
     
-    def compareTriplets(a,b)
+    def compare_triplets(a,b)
         scores = [0,0]
         a.each_with_index do |val, index|
             case val <=> b[index]
@@ -35,7 +35,7 @@
     # Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
         # **BigNum and FixNum are unified in ruby as Integer, use Long for java
 
-    def aVeryBigSum arr
+    def a_very_big_sum arr
         arr.reduce(:+)
     end
 
@@ -44,7 +44,7 @@
     # diagonalDifference takes the following parameter:
         # arr: an array of integers .
 
-    def diagonalDifference arr
+    def diagonal_difference arr
         diagonal_difference = 0
         arr.each_with_index do |val, index|
             diagonal_difference  = diagonal_difference + val[index] - val[val.size - index - 1]
@@ -57,7 +57,7 @@
     # Print the decimal value of each fraction on a new line.
 
     # iterates across array 1x
-    def plusMinus arr
+    def plus_minus arr
         positive_count = 0
         negative_count = 0
         zero_count = 0
@@ -77,7 +77,7 @@
     end
 
     # solved in 3 lines, iterates across array 3x
-    def plusMinus arr
+    def plus_minus arr
         p arr.select { |el| el > 0 }.size / arr.size.to_f
         p arr.select { |el| el < 0 }.size / arr.size.to_f
         p arr.select { |el| el == 0 }.size / arr.size.to_f
@@ -102,7 +102,7 @@
     # Then print the respective minimum and maximum values as a single line of two space-separated long integers.
         # input format: [a, b, c, d, e], an array of 5 integers
 
-    def miniMaxSum arr
+    def mini_max_sum arr
         min_nums = Array.new
         max_nums = Array.new
         min, max, min_index, max_index = nil
@@ -131,7 +131,7 @@
         print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
     end
 
-    def miniMaxSum arr
+    def mini_max_sum arr
         min_nums = arr.take(4)
         max_nums = arr.take(4)
         minMax = arr.minmax
@@ -140,7 +140,7 @@
         print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
     end
 
-    def miniMaxSum arr
+    def mini_max_sum arr
         min_nums = arr.take(5)
         max_nums = arr.take(5)
         minMax = arr.minmax
@@ -149,12 +149,12 @@
         print "#{min_nums.reduce(:+)} #{max_nums.reduce(:+)}"
     end
 
-    def miniMaxSum arr
+    def mini_max_sum arr
         sum = arr.reduce(:+)
         print "#{sum - arr.min} #{sum -arr.max}"
     end
 
-    def miniMaxSum arr
+    def mini_max_sum arr
         sorted = arr.sort
         print "#{sorted.take(4).sum} #{sorted.slice(1,4).sum}"
     end
@@ -164,11 +164,11 @@
     # When she blows out the candles, she’ll only be able to blow out the tallest ones. Your task is to find out how many candles she can successfully blow out.
         # input format: [a, b, c, a, c], an array of integers
 
-    def birthdayCakeCandles arr
+    def birthday_cake_candles arr
         arr.count(arr.max)
     end
 
-    def birthdayCakeCandles arr
+    def birthday_cake_candles arr
         max = nil
         count = 0
         arr.each do |val|
@@ -186,13 +186,13 @@
     # Given a time in 12-hour AM/PM format, convert it to military (24-hour) time
         # format: hh:mm:ssAM to hh:mm:ss
 
-    def timeConversion s
+    def time_conversion s
         converted_time = "#{(s[0,2].to_i + 12) % 12}#{s[2,6]}".rjust(8, "0")
         converted_time = "#{converted_time[0,2].to_i + 12}#{s[2,6]}" if s[8,9] == "PM"
         converted_time
     end
 
-    def timeConversion s
+    def time_conversion s
         array = s.split(":")
         array[0] = "#{(array[0].to_i + 12) % 12}".rjust(2, "0")
         array[0] = (array[0].to_i + 12).to_s if array[2].slice!(2..3) == "PM"

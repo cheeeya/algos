@@ -1,4 +1,4 @@
-# Warmup
+# Problem Solving 1 - 10
 
 # 1.
 

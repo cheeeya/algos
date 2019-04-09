@@ -150,6 +150,11 @@
     end
 
     def miniMaxSum arr
+        sum = arr.reduce(:+)
+        print "#{sum - arr.min} #{sum -arr.max}"
+    end
+
+    def miniMaxSum arr
         sorted = arr.sort
         print "#{sorted.take(4).sum} #{sorted.slice(1,4).sum}"
     end

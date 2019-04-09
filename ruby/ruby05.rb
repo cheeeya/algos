@@ -49,3 +49,18 @@
         puts location_a.count { |a| a.between?(s,t) }
         puts location_o.count { |o| o.between?(s,t) }
     end
+
+# 13. Kangaroo
+    # return YES if they reach the same position at the same time, or NO if they don't.
+    # kangaroo has the following parameter(s):
+        # x1, v1: integers, starting position and jump distance for kangaroo 1
+        # x2, v2: integers, starting position and jump distance for kangaroo 2
+
+    def kangaroo(x1, v1, x2, v2)
+        num_jumps = (x1 - x2) / (v1 - v2).to_f
+        if num_jumps < 0 && num_jumps % 1 == 0
+            "YES"
+        else
+            "NO"
+        end
+    end

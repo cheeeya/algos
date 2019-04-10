@@ -73,4 +73,24 @@
         (a.max..b.min).count{ |f| a.all?{ |x| f % x == 0 } && b.all?{ |y| y % f == 0 }}
     end
 
-    
+# 15. Breaking the Records
+    # return an integer array containing the numbers of times she broke her records.
+    # Index 0 is for breaking most points records, and index 1 is for breaking least points records.
+    # breaking_records has the following parameter(s):
+        # scores: an array of integers, in the same order as the games played
+
+    def breaking_records(scores)
+        min = scores[0]
+        max = scores[0]
+        record_breaks = [0,0]
+        scores.drop(1).each do |score|
+            if score < min
+                min = score
+                record_breaks[1] += 1
+            elsif score > max
+                max = score
+                record_breaks[0] += 1
+            end
+        end
+        record_breaks
+    end

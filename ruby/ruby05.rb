@@ -80,8 +80,7 @@
         # scores: an array of integers, in the same order as the games played
 
     def breaking_records(scores)
-        min = scores[0]
-        max = scores[0]
+        min, max = scores[0], scores[0]
         record_breaks = [0,0]
         scores.drop(1).each do |score|
             if score < min
@@ -93,4 +92,16 @@
             end
         end
         record_breaks
+    end
+
+# 16. Birthday Chocolate
+    # return an integer denoting the number of ways Lily can divide the chocolate bar, 
+    # where the length of the segment matches Ron's birth month and the sum of the integers on the squares is equal to his birth day.
+    # birthday has the following parameter(s):
+        # s: an array of integers, the numbers on each of the squares of chocolate
+        # d: an integer, Ron's birth day
+        # m: an integer, Ron's birth month
+
+    def birthday(s, d, m)
+        (0..s.length - m).count{ |i| s[i..i + m - 1].reduce(:+) == d}
     end

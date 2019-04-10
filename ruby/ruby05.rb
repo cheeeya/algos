@@ -6,6 +6,16 @@
     # grading_students has the following parameter(s):
         # grades: an array of integers representing grades before rounding
     # return an integer array consisting of rounded grades.
+
+    def grading_students grades
+        grades.map do |grade|
+            if grade > 37 && (grade % 5).between?(3,4)
+                grade += 5 - (grade % 5)
+            else
+                grade
+            end
+        end
+    end
     
     def grading_students grades
         rounded_grades = Array.new
@@ -19,18 +29,6 @@
             end
         end
         rounded_grades
-    end
-
-    def gradingStudents grades
-        rounded_grades = grades.map do |grade|
-            if grade > 37 && (grade % 5).between?(3,4)
-                rounded = grade.round(-1)
-                rounded += 5 if grade > rounded
-                rounded
-            else
-                grade
-            end
-        end
     end
 
 # 12. Apple and Orange

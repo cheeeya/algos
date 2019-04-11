@@ -105,3 +105,29 @@
     def birthday(s, d, m)
         (0..s.length - m).count{ |i| s[i..i + m - 1].reduce(:+) == d}
     end
+
+# 17. Divisible Sum Pairs
+    # You are given an array of n integers, and a positive integer, k.
+    # Find and print the number of (i,j) pairs where i < j and ar[i] + ar[j] is divisible by k.
+    # divisible_sum_pairs has the following parameter(s):
+        # n: the integer length of array 
+        # ar: an array of integers
+        # k: the integer to divide the pair sum by
+
+    def divisible_sum_pairs(n, k, ar)
+        (0..n - 1).inject do |sum, i|
+            sum + ar.drop(i).count { |el| (ar[i - 1] + el) % k == 0 }
+        end
+    end
+
+    def divisible_sum_pairs(n, k, ar)
+        total = 0
+        (0..n - 2).each do |i|
+            total += ar.drop(i+1).count{ |el| (ar[i] + el) % k == 0 }
+        end
+        total
+    end
+
+    def divisible_sum_pairs(n, k, ar)
+        ar.each_with_index.map { |e1, i| ar.drop(i+1).count{ |e2| (e1 + e2) % k == 0} }.reduce(:+)
+    end

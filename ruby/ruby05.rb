@@ -131,3 +131,15 @@
     def divisible_sum_pairs(n, k, ar)
         ar.each_with_index.map { |e1, i| ar.drop(i+1).count{ |e2| (e1 + e2) % k == 0} }.reduce(:+)
     end
+
+# 18. Migratory Birds
+    # return the lowest type number of the most frequently sighted bird.
+    # migratory_birds has the following parameter(s):
+        # arr: an array of integers representing types of birds sighted
+
+    def migratory_birds arr
+        frequency_hash = { 1 => 0, 2 => 0, 3 => 0, 4 => 0, 5=> 0 }
+        arr.each { |type| frequency_hash[type] += 1 }
+        frequency_hash.max_by { |k,v| v }[0]
+        # frequency_hash.key(frequency_hash.values.max)
+    end

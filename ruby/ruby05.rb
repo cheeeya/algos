@@ -143,3 +143,30 @@
         frequency_hash.max_by { |k,v| v }[0]
         # frequency_hash.key(frequency_hash.values.max)
     end
+
+# 19. Day of the Programmer
+    # From 1700 to 1917, Russia's official calendar was the Julian calendar; since 1919 they used the Gregorian calendar system.
+    # The transition from the Julian to Gregorian calendar system occurred in 1918, when the next day after January 31st was February 14th.
+    # Given a year, y, find the date of the 256th day of that year according to the official Russian calendar during that year.
+    # Then print it in the format dd.mm.yyyy, where dd is the two-digit day, mm is the two-digit month, and yyyy is y.
+
+    def day_of_programmer year
+        if year == 1918
+            "26.09.1918"
+        else
+            if leap_year?(year)
+                "12.09.#{year}"
+            else
+                "13.09.#{year}"
+            end
+        end
+    end
+
+    def leap_year? year
+        # (year < 1918 && year % 4 == 0) || (year > 1918 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)))
+        if year < 1918
+            year % 4 == 0
+        else
+            year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
+        end
+    end

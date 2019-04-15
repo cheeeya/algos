@@ -74,3 +74,46 @@
             "Cat B"
         end
     end
+
+# 26. Forming a Magic Square
+    # magic square: n x n matric where the sums of any row, column, or diagonal of length n are equal
+    # return an integer that represents the minimal total cost of converting the input square to a magic square.
+    # formingMagicSquare has the following parameter(s):
+        # s: a  array of integers
+    
+    def forming_magic_square(s)
+        magic_square = [[4,9,2],[3,5,7],[8,1,6]]
+        magic_hash = Hash.new
+        lowest_cost = nil
+        (0..7).each do |key|
+            if key == 0
+                magic_hash[key] = magic_square
+            elsif key < 4
+                magic_hash[key] = rotate(magic_hash[key - 1])
+            else    
+                magic_hash[key] = reflect(magic_hash[key - 4])
+            end
+            temp_cost = 0
+            (0..2).each do |i|
+                (0..2).each do |j|
+                    temp_cost += (s[i][j] - magic_hash[key][i][j]).abs
+                end
+            end
+            lowest_cost = temp_cost if lowest_cost.nil? || temp_cost < lowest_cost
+        end
+        lowest_cost
+    end
+
+    def rotate(s)
+        rotated_square = [[],[],[]]
+        (0..2).each do |i|
+            (0..2).each do |j|
+                rotated_square[j][i] = s[i][2 - j]
+            end
+        end
+        rotated_square
+    end
+
+    def reflect(s)
+        s.reverse
+    end

@@ -40,3 +40,19 @@
         count
     end
     
+# 24. Electronics Shop
+    # Given the possible prices of keyboards and mice, return the maximum total price for two items within budget, or -1 if out of budget.
+    # get_money_spent has the following parameter(s):
+    #     keyboards: an array of integers representing keyboard prices
+    #     drives: an array of integers representing drive prices
+    #     b: the units of currency in Monica's budget
+
+    def get_money_spent(keyboards, drives, b)
+        max_price = -1
+        keyboards.each do |k|
+            drives.each do |d|
+                max_price = k + d if k + d <= b && k + d > max_price
+            end
+        end
+        max_price
+    end

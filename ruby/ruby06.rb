@@ -43,9 +43,9 @@
 # 24. Electronics Shop
     # Given the possible prices of keyboards and mice, return the maximum total price for two items within budget, or -1 if out of budget.
     # get_money_spent has the following parameter(s):
-    #     keyboards: an array of integers representing keyboard prices
-    #     drives: an array of integers representing drive prices
-    #     b: the units of currency in Monica's budget
+        # keyboards: an array of integers representing keyboard prices
+        # drives: an array of integers representing drive prices
+        # b: the units of currency in Monica's budget
 
     def get_money_spent(keyboards, drives, b)
         max_price = -1
@@ -55,4 +55,22 @@
             end
         end
         max_price
+    end
+
+# 25. Cats and a Mouse
+    # return which Cat reaches the mouse first, or C if the cats reach the mouse at the same time
+    # cat_and_mouse has the following parameter(s):
+        # x: an integer, Cat A's position
+        # y: an integer, Cat B's position
+        # z: an integer, Mouse C's position
+
+    def cat_and_mouse(x, y, z)
+        case (x - z).abs <=> (y - z).abs
+        when - 1
+            "Cat A"
+        when 0
+            "Mouse C"
+        when 1
+            "Cat B"
+        end
     end

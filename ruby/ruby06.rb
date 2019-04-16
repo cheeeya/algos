@@ -145,24 +145,17 @@
 
     def climbing_leaderboard(scores, alice)
         ranks = []
-        leaderboard = []
-        rank = 0
-        last_score = 0
-        scores.each do |score|
-            next if last_score == score
-            leaderboard[rank] = score
-            rank += 1
-            last_score = score
-        end
-        alice.each do |alice_score|
-            leaderboard.each_with_index do |rank_score, index|
-                if alice_score >= rank_score
-                    leaderboard.insert(index, alice_score) if alice_score > rank_score
-                    ranks.push(index + 1)
+        leaderboard = scores.uniq
+        prev_score_index = leaderboard.size - 1
+        alice.each_with_index do |alice_score, index|
+            while ranks.size < index + 1
+                comp = leaderboard[prev_score_index] <=> alice_score
+                if comp > -1
+                    ranks.push(prev_score_index + 1 + comp)
                     break
-                elsif index == leaderboard.size - 1
-                    leaderboard.push(alice_score)
                 end
+                ranks.push(1) if prev_score_index == 0
+                prev_score_index -= 1 unless prev_score_index == 0
             end
         end
         ranks

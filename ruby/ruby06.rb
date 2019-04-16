@@ -133,3 +133,37 @@
         end
         longest
     end
+
+# 28. Climbing the Leaderboard
+    # The player with the highest score is rank 1 on the leaderboard.
+    # Players who have equal scores receive the same ranking number,
+    # and the next player(s) receive the immediately following ranking number.
+    # return an integer array where each element res[j] represents Alice's rank after the jth game
+    # climbing_leaderboard has the following parameter(s):
+        # scores: an array of integers that represent leaderboard scores
+        # alice: an array of integers that represent Alice's scores
+
+    def climbing_leaderboard(scores, alice)
+        ranks = []
+        leaderboard = []
+        rank = 0
+        last_score = 0
+        scores.each do |score|
+            next if last_score == score
+            leaderboard[rank] = score
+            rank += 1
+            last_score = score
+        end
+        alice.each do |alice_score|
+            leaderboard.each_with_index do |rank_score, index|
+                if alice_score >= rank_score
+                    leaderboard.insert(index, alice_score) if alice_score > rank_score
+                    ranks.push(index + 1)
+                    break
+                elsif index == leaderboard.size - 1
+                    leaderboard.push(alice_score)
+                end
+            end
+        end
+        ranks
+    end

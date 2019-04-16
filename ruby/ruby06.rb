@@ -117,3 +117,19 @@
     def reflect(s)
         s.reverse
     end
+
+# 27. Picking Numbers
+    # Given an array of integers, find and print the maximum number of integers you can select from the array
+    # such that the absolute difference between any two of the chosen integers is less than or equal to 1
+
+    def picking_numbers(arr)
+        longest = 0
+        checked_hash = Hash.new(false)
+        arr.each do |n|
+            next if checked_hash[n]
+            set_length = arr.select { |m| m == n || m == n + 1 }.length
+            checked_hash[n] = true
+            longest = set_length if set_length > longest
+        end
+        longest
+    end

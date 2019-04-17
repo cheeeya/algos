@@ -187,5 +187,5 @@
         word.each_byte do |byte|
             max = h[byte - 97] if h[byte - 97] > max
         end
-    max * word.length
+        max * word.length
     end

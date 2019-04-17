@@ -160,3 +160,16 @@
         end
         ranks
     end
+
+# 29. The Hurdle Race
+    # Hurdles are of varying heights, and Dan has a maximum height he can jump.
+    # There is a magic potion he can take that will increase his maximum height by  unit for each dose
+    # return the minimum units of potion Dan needs to drink to jump all of the hurdles.
+    # hurdleRace has the following parameter(s):
+        # k: an integer denoting the height Dan can jump naturally
+        # height: an array of integers denoting the heights of each hurdle
+
+    def hurdle_race(k, height)
+        hurdle = height.max
+        hurdle > k ? hurdle - k : 0
+    end

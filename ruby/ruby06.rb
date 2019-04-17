@@ -165,11 +165,27 @@
     # Hurdles are of varying heights, and Dan has a maximum height he can jump.
     # There is a magic potion he can take that will increase his maximum height by  unit for each dose
     # return the minimum units of potion Dan needs to drink to jump all of the hurdles.
-    # hurdleRace has the following parameter(s):
+    # hurdle_race has the following parameter(s):
         # k: an integer denoting the height Dan can jump naturally
         # height: an array of integers denoting the heights of each hurdle
 
     def hurdle_race(k, height)
         hurdle = height.max
         hurdle > k ? hurdle - k : 0
+    end
+
+# 30. Designer PDF Viewer
+    # In this challenge, you will be given a list of letter heights in the alphabet and a string.
+    # Using the letter heights given, determine the area of the rectangle highlight in  assuming all letters are  wide
+    # return an integer representing the size of the highlighted area.
+    # designerPdfViewer has the following parameter(s):
+        # h: an array of integers representing the heights of each letter
+        # word: a string
+
+    def designer_pdf_viewer(h, word)
+        max = 0
+        word.each_byte do |byte|
+            max = h[byte - 97] if h[byte - 97] > max
+        end
+    max * word.length
     end

@@ -178,7 +178,7 @@
     # In this challenge, you will be given a list of letter heights in the alphabet and a string.
     # Using the letter heights given, determine the area of the rectangle highlight in  assuming all letters are  wide
     # return an integer representing the size of the highlighted area.
-    # designerPdfViewer has the following parameter(s):
+    # designer_pdf_viewer has the following parameter(s):
         # h: an array of integers representing the heights of each letter
         # word: a string
 

@@ -22,3 +22,13 @@
         return n + 1 if n < 3
         n % 2 == 0 ? utopian_tree(n - 1) + 1 : utopian_tree(n - 1) * 2
     end
+
+# 32. Angry Professor
+    # return YES if class is cancelled, or NO otherwise.
+    # angry_professor has the following parameter(s):
+        # k: the threshold number of students
+        # a: an array of integers representing arrival times
+    
+    def angry_professor(k, a)
+        k <= a.select { |s| s < 1 }.size ? "NO" : "YES"
+    end

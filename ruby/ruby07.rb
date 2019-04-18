@@ -32,3 +32,25 @@
     def angry_professor(k, a)
         k <= a.select { |s| s < 1 }.size ? "NO" : "YES"
     end
+
+# 33. Beautiful Days
+    # Given a range of numbered days, [i...j] and a number k,
+    # determine the number of days in the range that are beautiful.
+    # Beautiful numbers are defined as numbers where |i - reverse(i)| is evenly divisible by k
+    # return the number of beautiful days in the range.
+    # beautiful_days has the following parameter(s):
+        # i: the starting day number
+        # j: the ending day number
+        # k: the divisor
+
+    def beautiful_days(i, j, k)
+        count = 0
+        (i..j).each do |d|
+            count += 1 if (d - d.to_s.reverse.to_i).abs % k == 0
+        end
+        count 
+    end
+
+    def beautiful_days(i, j, k)
+        (i..j).select{ |d| (d - d.to_s.reverse.to_i).abs % k == 0 }.size
+    end

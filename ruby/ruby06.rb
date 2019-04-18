@@ -163,7 +163,7 @@
 
 # 29. The Hurdle Race
     # Hurdles are of varying heights, and Dan has a maximum height he can jump.
-    # There is a magic potion he can take that will increase his maximum height by  unit for each dose
+    # There is a magic potion he can take that will increase his maximum height by 1 unit for each dose
     # return the minimum units of potion Dan needs to drink to jump all of the hurdles.
     # hurdle_race has the following parameter(s):
         # k: an integer denoting the height Dan can jump naturally

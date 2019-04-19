@@ -80,7 +80,7 @@
     # save_the_prisoner has the following parameter(s):
         # n: an integer, the number of prisoners
         # m: an integer, the number of sweets
-        # s: an integer, the chair number to begin passing out sweets from
+        # s: an integer, the chair number to begin passing out sweets from, chairs are numbered starting from 1
 
     def save_the_prisoner(n, m, s)
         ((m - 1) % n + s - 1) % n + 1

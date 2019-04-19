@@ -54,3 +54,21 @@
     def beautiful_days(i, j, k)
         (i..j).select{ |d| (d - d.to_s.reverse.to_i).abs % k == 0 }.size
     end
+
+# 34. Viral Advertising
+    # When they launch a new product, they advertise it to exactly 5 people on social media
+    # Each day, floor(recipients / 2) of the recipients like the advertisement and will share it with 3 friends on the following day
+    # return the cumulative number of people who have liked the ad at a given time.
+    # viral_advertising has the following parameter(s):
+        # n: the integer number of days
+
+    def viral_advertising n
+        recipients = 5
+        total_likes = 0
+        (0...n).each do |d|
+            liked = recipients / 2
+            recipients = liked * 3
+            total_likes += liked
+        end
+        total_likes
+    end

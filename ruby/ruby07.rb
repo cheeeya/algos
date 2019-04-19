@@ -72,3 +72,16 @@
         end
         total_likes
     end
+
+# 35. Save the Prisoner
+    # A chair number will be drawn from a hat. Beginning with the prisoner in that chair,
+    # one candy will be handed to each prisoner sequentially around the table until all have been distributed.
+    # return the chair number occupied by the prisoner who will receive the last candy.
+    # save_the_prisoner has the following parameter(s):
+        # n: an integer, the number of prisoners
+        # m: an integer, the number of sweets
+        # s: an integer, the chair number to begin passing out sweets from
+
+    def save_the_prisoner(n, m, s)
+        ((m - 1) % n + s - 1) % n + 1
+    end

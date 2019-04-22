@@ -100,3 +100,22 @@
         end
         values
     end
+
+# 37. Sequence Equation
+    # 1 <= p(x) <= n, 1 <= x <= n
+    # For each x find any integer y such that p(p(y)) = x
+    # return an array of integers that represent the values of .
+    # permutation_equation has the following parameter(s):
+        # p: an array of integers
+
+    def permutation_equation p
+        index_hash = {}
+        y = []
+        p.each_with_index do |x, i|
+            index_hash[x] = i
+        end
+        (1..p.size).each do |n|
+            y.push(index_hash[index_hash[n] + 1] + 1)
+        end
+        y
+    end

@@ -85,3 +85,18 @@
     def save_the_prisoner(n, m, s)
         ((m - 1) % n + s - 1) % n + 1
     end
+
+# 36. Circular Array Rotation
+    # return an array of integers representing the values at the specified indices.
+    # circular_array_rotation has the following parameter(s):
+        # a: an array of integers to rotate
+        # k: an integer, the rotation count
+        # queries: an array of integers, the indices to report
+
+    def circular_array_rotation(a, k, queries)
+        values = []
+        queries.each do |q|
+            values.push(a[q - (k % a.size)])
+        end
+        values
+    end

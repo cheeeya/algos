@@ -119,3 +119,23 @@
         end
         y
     end
+
+# 38. given an array of clouds, c, and an energy level e = 100.
+    # start from c[0] and use 1 unit of energy to make a jump of size k to cloud c[(i + k) % n].
+    # If you land on a thundercloud, c[i] = 1 , your energy (e) decreases by 2 additional units.
+    # The game ends when you land back on cloud c[0].
+    #  return an integer representing the energy level remaining after the game.
+    # jumping_on_clouds has the following parameter(s):
+        # c: an array of integers representing cloud types
+        # k: an integer representing the length of one jump
+
+    def jumping_on_clouds(c, k)
+        i = k % c.size
+        e = 100
+        loop do
+            c[i] == 1 ? e -= 3 : e -= 1
+            break if i == 0
+            i + k > c.size - 1 ? i = 0 : i += k
+        end
+        e
+    end

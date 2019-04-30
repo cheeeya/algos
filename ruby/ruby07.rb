@@ -155,4 +155,10 @@
         count
     end
 
-# 40. 
+# 40. Extra Long Factorials
+    # extra_long_factorials has the following parameter(s):
+        # n: an integer
+    
+    def extra_long_factorials n
+        (1..n).reduce(:*)
+    end

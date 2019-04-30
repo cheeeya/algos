@@ -120,7 +120,8 @@
         y
     end
 
-# 38. given an array of clouds, c, and an energy level e = 100.
+# 38. Cloud Jumping 
+    # given an array of clouds, c, and an energy level e = 100.
     # start from c[0] and use 1 unit of energy to make a jump of size k to cloud c[(i + k) % n].
     # If you land on a thundercloud, c[i] = 1 , your energy (e) decreases by 2 additional units.
     # The game ends when you land back on cloud c[0].
@@ -138,4 +139,18 @@
             i + k > c.size - 1 ? i = 0 : i += k
         end
         e
+    end
+
+# 39. Find Digits
+    # return an integer representing the number of digits of d that are divisors of n.
+    # find_digits has the following parameter(s):
+        # n: an integer to analyze
+
+    def find_digits n
+        count = 0
+        n.to_s.each_char do |d|
+            next if d == "0"
+            count += 1 if n % d.to_i == 0
+        end
+        count
     end

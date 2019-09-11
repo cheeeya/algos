@@ -13,6 +13,21 @@
         # k: an integer that represents the number of operations
 
     def append_and_delete(s, t, k)
-        
-
+        split = s.length
+        (0..s.length - 1).each do |n|
+            if t[n].nil? || s[n] != t[n]
+                split = n
+                break
+            end
+        end
+        if s[split..-1].length + t[split..-1].length <= k
+            if split == s.length && split != t.length
+                if (t[split..-1].length % 2 != k % 2)
+                    return "No"
+                end
+            end
+            return "Yes"
+        else
+            return "No"
+        end
     end
